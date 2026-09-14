@@ -7,10 +7,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3.0
+      revision: v0.4.0
       import: app/west.yml
-    - name: prospector-zmk-module
-      remote: carrefinho
+    - name: zmk-component-raytac-dongle
+      remote: perrwa
       revision: main
   self:
     path: config
