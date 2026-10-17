@@ -2,15 +2,18 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: perrwa
-      url-base: https://github.com/perrwa
+    - name: rschenk
+      url-base: https://github.com/rschenk
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
     - name: zmk-component-raytac-dongle
-      remote: perrwa
-      revision: perrwa/v0.3-cx40-bootloader
+      remote: rschenk
+      # rschenk's fork has both a branch and a tag named "v0.3"; git prefers
+      # the tag when a revision name is ambiguous, and that tag predates the
+      # CX-40 board files. Pin the full ref path so west tracks the branch.
+      revision: refs/heads/v0.3
   self:
     path: config
